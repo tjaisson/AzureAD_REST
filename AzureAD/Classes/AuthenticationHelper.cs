@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.IO;
 using System.Threading.Tasks;
+using Microsoft.IdentityModel.Clients.ActiveDirectory;
 
 namespace AzureAD.AD
 {
@@ -53,22 +54,6 @@ namespace AzureAD.AD
             }
             return tocken;
         }
-
-
-        /// <summary>
-        /// Get Active Directory Client for User.
-        /// </summary>
-        /// <returns>ActiveDirectoryClient for User.</returns>
-        public async static Task<ActiveDirectoryClient> GetActiveDirectoryClientAsUser()
-        {
-            string accessToken = await GetTocken();
-
-            Uri servicePointUri = new Uri(Constants.ResourceUrl);
-            Uri serviceRoot = new Uri(servicePointUri, Constants.TenantId);
-            ActiveDirectoryClient activeDirectoryClient = new ActiveDirectoryClient(serviceRoot, GetTocken);
-            return activeDirectoryClient;
-        }
-
 
         public static async Task<Microsoft.Graph.GraphServiceClient> GetGraphServiceClientAsUser()
         {
