@@ -1,4 +1,4 @@
-﻿namespace AzureADAccess.AD
+﻿namespace AzureAD.AD
 {
     internal class Constants
     {

@@ -3,7 +3,7 @@ using System.Net.Http;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace AzureADAccess.AD
+namespace AzureAD.AD
 {
     internal class AuthenticationHelper
     {
